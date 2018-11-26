@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Settings, Theme } from './settings.model';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, tap } from 'rxjs/operators';
-import { Subject } from 'rxjs/Subject';
+import { Subject, throwError } from 'rxjs';
 
 @Injectable()
 export class SettingsService {
@@ -40,6 +40,6 @@ export class SettingsService {
         `body was: ${error.error}`);
     }
     // return an ErrorObservable with a user-facing error message
-    return new ErrorObservable();
+    return throwError('something bad happened');
   }
 }

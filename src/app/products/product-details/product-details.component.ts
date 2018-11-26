@@ -3,8 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, map, pluck } from 'rxjs/operators';
 import { ProductsService } from '../products.service';
 import { Product } from '../product.model';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+import { Observable ,  of } from 'rxjs';
 
 @Component({
   selector: 'app-product-details',
